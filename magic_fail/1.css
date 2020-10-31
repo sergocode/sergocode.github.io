@@ -133,7 +133,7 @@ opacity:1;
 	width: 100%;
 	border-radius: 50%;
 	z-index: 2;
-	animation: shadow 3s infinite, antirotate 60s infinite linear; 
+	animation: shadow 10s infinite, antirotate 60s infinite linear; 
 }
 
 @keyframes antirotate{
@@ -167,28 +167,72 @@ box-shadow: 0 0 200px rgba(255,237,0,0.8);
 	width: 60%;
 	font-family: "Harry";
 	font-size: 50px;
-	transition: 1s;
+	transition: 2s;
 	background: rgba(255,255,255, .2);
     background-size: 100%;
     color: white;            
     box-shadow: 5px 10px 20px rgba(255,237,0,0.3), -5px -10px 20px rgba(255,237,0,0.5);
     outline: none;
     cursor: pointer;
+    -moz-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;  
 }
 
 .button:hover {
 	font-size: 70px;
 	height: 80%;
 	width: 80%;
-	text-shadow: 1px 1px 4px black, 0 0 1em red;
+	text-shadow: 1px 1px 5px black;
 	text-decoration: none;
+	background: rgba(255,255,255, .5);
+	color: red;
+}
+
+.button:active {
+	transition: 0s;
+	color: rgba(255,237,0,1);
+}
+
+.result {
+	font-family: "Harry";
+	font-size: 50px;
+	display: flex;
+	justify-content: center; 
+	align-items: center;
+	position: absolute;
+	background-color: #fff;
+	width: auto;
+	height: auto;
+	z-index: 2;
+	animation: result 2s;
+	border-radius: 20%;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;  
 }
 
 p {
-	transition: 2s;
-	margin: 0;
+	z-index: 3;
+	width: 50px;
+	height: 50px;
+	background-size: 100% 100%;
 }
 
-.button:hover p {
-	color: red;
+#sad {
+	background-image: url(sad.svg);
+}
+
+#positive {
+	background-image: url(positive.svg);
+}
+
+@keyframes result{
+
+0% {
+	opacity: 0;
+	}
+100% {
+	opacity: 1;
+	}
 }

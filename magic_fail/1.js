@@ -21,11 +21,24 @@ function generate_candles() {
 	}
 } 
 
+var	click = document.getElementById("click");
 
+click.onclick = function () {
+	var who = Math.ceil((Math.random()*101-1)/50);
+		if (who === 1) {
+			doomsday = 'Тебе повезло! <p id="positive"></p>';
+		} 
+		else {
+			doomsday = 'Тебе не повезло! <p id="sad"></p>';
+		}
+	var el = document.querySelector(".sky");
+    el.parentNode.removeChild(el);
+    var body = document.getElementById("body");
+    let result = document.createElement('div');
+    result.innerHTML = doomsday;
+    result.className = "result";
+    body.append(result);
 
-function flying_animation() {
-	document.getElementById(candle.id).style.border= "solid 2px #fff"
-		
 }
 
 generate_candles()
