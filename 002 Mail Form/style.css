@@ -1,0 +1,39 @@
+body, .mailForm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+input, textarea {
+    font-size: 14px;
+    margin: 10px 0 0 0;
+    width: 350px;
+    resize: none;
+}
+.mailForm__map {
+    margin-top: 10px;
+}
+button {
+    margin: 10px 0 0 0;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.mailForm__comment {
+    display: inline-block;
+    height: 200px;
+}
+
+.mailForm__error, .mailForm__completed, .coords {
+    display: none;
+    color: red;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.mailForm__completed {
+    color: green;
+    font-size: 20px;
+}
