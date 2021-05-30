@@ -1,0 +1,206 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+html, body {
+  overflow-x: hidden;
+  height: 100%;
+}
+
+body {
+  position: relative;
+}
+
+#root {
+	height: 100%;
+	width: 100%;
+}
+
+.areas-container {
+	position: absolute;
+	display: flex;
+	flex-direction: row;
+	width: 200vw;
+	overflow: hidden;
+}
+
+.container {
+	overflow: hidden;
+	width: 100vw;
+	height: 100vh;
+	background: #8080809c;
+}
+
+.clock-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: linear-gradient(90deg, #735bf7, #f44336, #4caf50, #ffc107);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+}
+
+.main-container {
+	background: linear-gradient(349deg, #e91e63, #2196f3, #ff9800);
+    background-size: 300% 110%;
+    overflow-y: scroll;
+}
+
+.text-add {
+	animation: text-add 3s ease both;
+}
+
+@keyframes text-add {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.gradient-button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: linear-gradient(90deg, #735bf7, #f44336, #4caf50, #ffc107);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	font-size: 20px;
+	width: 50vw;
+	height: 55px;
+	text-transform: uppercase;
+	font-weight: 100;
+	color: #fff;
+	text-shadow: 0 1px 0 #ccc, 0 1px 0 #c9c9c9, 0 2px 0 #bbb, 0 3px 0 #b9b9b9, 0 3px 0 #aaa, 0 4px 1px rgb(0 0 0 / 10%), 0 0 3px rgb(0 0 0 / 10%), 0 1px 1px rgb(0 0 0 / 30%), 0 2px 3px rgb(0 0 0 / 20%), 0 4px 4px rgb(0 0 0 / 25%), 0 5px 4px rgb(0 0 0 / 20%), 0 10px 10px rgb(0 0 0 / 15%);
+	box-shadow: 0px 0px 12px 4px rgba(34, 60, 80, 0.29) inset;
+	border:none;
+	border-radius: 10px;
+}
+
+button:active {
+	transform: scale(0.95);
+}
+
+input {
+	font-size: 40px;
+	font-weight: bold;
+	width: 80vw;
+	border-radius: 15px;
+	border: #fff solid 4px;
+	background: none;
+	color: #fff;
+}
+
+input:focus { 
+	outline: 0; 
+	box-shadow: 0px 0px 12px 4px rgba(34, 60, 80, 0.29) inset;
+}
+
+@media (max-width: 700px) {
+	.input-container {
+		flex-direction: column;
+    	align-items: center;
+	}
+
+	button {
+		margin-top: 10px;
+	}
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.clock {
+	transform: perspective(300px) rotateX(30deg);
+	font-size: 20vw;
+	color: #fff;
+	text-shadow: 0 1px 0 #ccc, 0 1px 0 #c9c9c9, 0 2px 0 #bbb, 0 3px 0 #b9b9b9, 0 3px 0 #aaa, 0 4px 1px rgb(0 0 0 / 10%), 0 0 3px rgb(0 0 0 / 10%), 0 1px 1px rgb(0 0 0 / 30%), 0 2px 3px rgb(0 0 0 / 20%), 0 4px 4px rgb(0 0 0 / 25%), 0 5px 4px rgb(0 0 0 / 20%), 0 10px 10px rgb(0 0 0 / 15%);
+}
+
+.next-slide {
+	animation: next-slide 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes next-slide {
+  0% {
+  	transform: translateX(0);
+  }
+  100% {
+  	transform: translateX(-100vw);
+  }
+}
+
+.back-slide {
+	animation: back-slide 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes back-slide {
+  0% {
+  	transform: translateX(-100vw);
+  }
+  100% {
+  	transform: translateX(0vw);
+  }
+}
+
+.input-container {
+	display: flex;
+	justify-content: space-around;
+	margin-top: 5%;
+}
+
+.messages-container {
+	padding: 0 10px 0 10px;
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	align-items: center;
+	margin: 0px 20px;
+}
+
+.slide-text {
+	font-size: 40px;
+	font-weight: bold;
+	animation: slide-text 1.2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	text-shadow: 0 1px 0 #ccc, 0 1px 0 #c9c9c9, 0 2px 0 #bbb, 0 3px 0 #b9b9b9, 0 3px 0 #aaa, 0 4px 1px rgb(0 0 0 / 10%), 0 0 3px rgb(0 0 0 / 10%), 0 1px 1px rgb(0 0 0 / 30%), 0 2px 3px rgb(0 0 0 / 20%), 0 4px 4px rgb(0 0 0 / 25%), 0 5px 4px rgb(0 0 0 / 20%), 0 10px 10px rgb(0 0 0 / 15%);
+	color: #fff;
+}
+
+@keyframes slide-text {
+  0% {
+	transform: translateZ(-700px) translateY(-500px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateZ(0) translateY(0) perspective(300px) rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+
